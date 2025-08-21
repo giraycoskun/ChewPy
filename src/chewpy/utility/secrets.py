@@ -29,16 +29,16 @@ def set_env_variable(key: str, value: str) -> None:
 
 
 def get_secret(
-    key: str, default: Any = None, is_bool: bool = False, is_int: bool = False
+    key: str, is_bool: bool = False, is_int: bool = False, default: str = ""
 ) -> Any:  # type: ignore
     """
     Retrieves a secret from environment variables.
 
     Args:
         key (str): The name of the environment variable.
-        default (str, optional): Fallback value if key is not found.
         is_bool (bool, optional): Whether to cast the value to a boolean.
         is_int (bool, optional): Whether to cast the value to an integer.
+         default (str, optional): Fallback value if key is not found.
     Returns:
         Any: The value of the environment variable or default if not found.
     """

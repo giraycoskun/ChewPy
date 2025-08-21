@@ -27,13 +27,13 @@ def main() -> None:
     global ENV_DEBUG  # pylint: disable=global-statement
     configure_secrets()
     try:
-        ENV_DEBUG = get_secret("DEBUG", default=False, is_bool=True)
+        ENV_DEBUG = get_secret("DEBUG", is_bool=True)
     except KeyError as e:
         logger.warning(e)
         ENV_DEBUG = False
     configure_logging(debug=ENV_DEBUG)
 
-    logger.info("main from ChewPy!")
+    logger.debug("main from ChewPy!")
     app()
 
 
