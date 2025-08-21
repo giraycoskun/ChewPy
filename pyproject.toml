@@ -1,0 +1,33 @@
+[project]
+name = "ChewPy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer>=0.16.0",
+    "loguru>=0.7.3",
+    "python-dotenv>=1.1.1",
+]
+
+[project.scripts]
+chewpy = "chewpy:main"
+
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"
+
+
+[dependency-groups]
+dev = [
+    "mkdocs-material>=9.6.17",
+    "mkdocstrings[python]>=0.30.0",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.1",
+    "ruff>=0.12.9",
+]
+
+# pre-commit run --all-files --hook-stage pre-push
+# uv run pytest tests
+# uv run mkdocs serve
