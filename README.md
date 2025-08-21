@@ -1,6 +1,7 @@
 # ChewPy
+ChewPy is a CLI tool designed to automate repetitive tasks and streamline workflows for jobs I frequently encounter. It serves as a personal utility to simplify and speed up everyday manual processes. I hope it becomes my co-pilot like *Chewbacca*.
 
-ChewPy is a Python project designed to simplify and enhance your workflow. This README provides an overview of the project, setup instructions, usage examples, and contribution guidelines.
+Docs: <https://giraycoskun.github.io/ChewPy/>
 
 ## Features
 

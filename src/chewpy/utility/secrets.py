@@ -43,18 +43,14 @@ def get_secret(
         Any: The value of the environment variable or default if not found.
     """
     value = os.getenv(key, default)
-    if value is not None:
-        if is_bool:
-            value = value.lower() in ("true", "1")
-        elif is_int:
-            try:
-                value = int(value)
-            except ValueError as exc:
-                logger.error(f"Missing/incorrect key {key}")
-                raise KeyError(f"Missing required environment variable: {key}") from exc
-    else:
-        logger.warning(f"Missing key {key}")
-        raise KeyError(f"Missing required environment variable: {key}")
+    if is_bool:
+        value = value.lower() in ("true", "1")
+    elif is_int:
+        try:
+            value = int(value)
+        except ValueError as exc:
+            logger.error(f"Missing/incorrect key {key}")
+            raise KeyError(f"Missing/incorrect key: {key}") from exc
     return value
 
 
